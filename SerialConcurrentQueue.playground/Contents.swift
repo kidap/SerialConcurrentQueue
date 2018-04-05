@@ -11,7 +11,7 @@ let serialQueue = DispatchQueue(label: "com.queue.serial")
 
 //#1 --- Async means main thread is not blocked
 serialQueue.async {
-    let thread = Thread.current.isMainThread ? "main": "else"
+    let thread = Thread.current.isMainThread ? "main": "other"
     for x in 0...10 {
         print("\(x)👿 \(thread)")
     }
@@ -23,7 +23,7 @@ print("1🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸")
 //#3 --- Since queue is serial, it has to wait for #1 to complete
 //       Sync blocks the main queue
 serialQueue.sync {
-    let thread = Thread.current.isMainThread ? "main": "else"
+    let thread = Thread.current.isMainThread ? "main": "other"
     for x in 0...15 {
         print("\(x)💩 \(thread)")
     }
