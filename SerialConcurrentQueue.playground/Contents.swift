@@ -29,7 +29,7 @@ serialQueue.sync {
     }
 }
 
-//Blocked by #3 so it has to wait for that to complete
+//#4 --- Blocked by #3 so it has to wait for that to complete
 print("2🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸")
 
 
